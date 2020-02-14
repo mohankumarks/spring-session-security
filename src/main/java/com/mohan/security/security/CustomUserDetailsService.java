@@ -21,9 +21,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	private UserService userService;
 
 	@Override
-	public UserDetails loadUserByUsername(String username)
-			throws UsernameNotFoundException {
-
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = userService.findByUserName(username);
 
 		if (user == null) {
@@ -33,8 +31,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 		authorities.add(new SimpleGrantedAuthority(user.getRole()));
 
-		return new CustomUserDetails(user.getId(), user.getFullName(),
-				user.getUserName(), user.getPassword(), user.isEnabled(), true,
-				true, true, authorities);
+		return new CustomUserDetails(user.getId(), user.getFullName(), user.getUserName(), user.getPassword(),
+				user.isEnabled(), true, true, true, authorities);
 	}
 }

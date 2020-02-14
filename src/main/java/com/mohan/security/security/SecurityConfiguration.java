@@ -21,9 +21,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Qualifier("customUserDetailsService")
 	private UserDetailsService userDetailsService;
 
-	public void configureGlobalSecurity(AuthenticationManagerBuilder auth)
-			throws Exception {
-
+	public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService);
 		auth.authenticationProvider(getAuthenticationProvider());
 	}
@@ -35,7 +33,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Bean
 	public DaoAuthenticationProvider getAuthenticationProvider() {
-
 		DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
 		authenticationProvider.setUserDetailsService(userDetailsService);
 		authenticationProvider.setPasswordEncoder(getPasswordEncoder());
@@ -45,8 +42,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-
-		http.csrf().disable().authorizeRequests().anyRequest().authenticated()
-		.and().formLogin();
+		http.csrf().disable().authorizeRequests().anyRequest().authenticated().and().formLogin();
 	}
 }

@@ -17,10 +17,8 @@ public class DemoController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ResponseEntity<Map<String, String>> demo() {
-
 		String name = null;
-		Object principal = SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
 		if (principal instanceof CustomUserDetails) {
 			name = ((CustomUserDetails) principal).getFullName();
