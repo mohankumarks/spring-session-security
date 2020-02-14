@@ -18,7 +18,7 @@
 		<hibernate.version>4.3.11.Final</hibernate.version>
 		<postgresql.connector.version>42.2.2</postgresql.connector.version>
 		<apache.dbcp2.version>2.2.0</apache.dbcp2.version>
-		<jackson.version>2.9.4</jackson.version>
+		<jackson.version>2.10.2</jackson.version>
 	</properties>
 
 	<dependencies>
