@@ -13,7 +13,7 @@
 		<maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
 		<maven.war.plugin.version>2.6</maven.war.plugin.version>
 		<spring.framework.version>4.3.17.RELEASE</spring.framework.version>
-		<spring.security.version>4.2.6.RELEASE</spring.security.version>
+		<spring.security.version>5.2.10.RELEASE</spring.security.version>
 		<servlet.version>4.0.0</servlet.version>
 		<hibernate.version>4.3.11.Final</hibernate.version>
 		<postgresql.connector.version>42.2.2</postgresql.connector.version>
